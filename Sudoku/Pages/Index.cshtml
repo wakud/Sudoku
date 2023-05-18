@@ -1,0 +1,266 @@
+﻿@page
+@model IndexModel
+
+@{
+    ViewData["Title"] = "Валідатор розв'язків Судоку";
+}
+
+<script src="~/js/ValidSudoku.js"></script>
+
+<div class="text-center">
+    <h1 class="display-4">Валідатор розв'язків Судоку</h1>
+    <br />
+    <div class="row">
+        <div class="col-6">
+            <!-- Виведення масиву судоку -->
+            <table id="sudokuTable1" class="sudoku">
+                <tbody>
+                    <tr>
+                        <td>5</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>1</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>9</td>
+                        <td>5</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>9</td>
+                        <td>8</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>2</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>5</td>
+                        <td>9</td>
+                        <td>7</td>
+                        <td>6</td>
+                        <td>1</td>
+                        <td>4</td>
+                        <td>2</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>2</td>
+                        <td>6</td>
+                        <td>8</td>
+                        <td>5</td>
+                        <td>3</td>
+                        <td>7</td>
+                        <td>9</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>1</td>
+                        <td>3</td>
+                        <td>9</td>
+                        <td>2</td>
+                        <td>4</td>
+                        <td>8</td>
+                        <td>5</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>6</td>
+                        <td>1</td>
+                        <td>5</td>
+                        <td>3</td>
+                        <td>7</td>
+                        <td>2</td>
+                        <td>8</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>8</td>
+                        <td>7</td>
+                        <td>4</td>
+                        <td>1</td>
+                        <td>9</td>
+                        <td>6</td>
+                        <td>3</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>2</td>
+                        <td>8</td>
+                        <td>6</td>
+                        <td>1</td>
+                        <td>7</td>
+                        <td>9</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-6">
+            <!-- Виведення масиву судоку -->
+            <table id="sudokuTable2" class="sudoku">
+                <tbody>
+                    <tr>
+                        <td>5</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>1</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>9</td>
+                        <td>0</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>2</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>5</td>
+                        <td>9</td>
+                        <td>7</td>
+                        <td>6</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>2</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>2</td>
+                        <td>6</td>
+                        <td>8</td>
+                        <td>5</td>
+                        <td>3</td>
+                        <td>7</td>
+                        <td>9</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>1</td>
+                        <td>3</td>
+                        <td>9</td>
+                        <td>2</td>
+                        <td>4</td>
+                        <td>8</td>
+                        <td>5</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>5</td>
+                        <td>3</td>
+                        <td>7</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>8</td>
+                        <td>7</td>
+                        <td>4</td>
+                        <td>1</td>
+                        <td>9</td>
+                        <td>6</td>
+                        <td>3</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>4</td>
+                        <td>8</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>7</td>
+                        <td>9</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+    function getSudokuArray(tableId) {
+        let table = document.getElementById(tableId);
+        let rows = table.getElementsByTagName("tr");
+        let sudokuArray = [];
+
+        for (let i = 0; i < rows.length; i++) {
+            let cells = rows[i].getElementsByTagName("td");
+            let rowArray = [];
+
+            for (let j = 0; j < cells.length; j++) {
+                let cellValue = parseInt(cells[j].textContent);
+                rowArray.push(cellValue);
+            }
+
+            sudokuArray.push(rowArray);
+        }
+
+        return sudokuArray;
+    }
+
+    // отрмуємо дані судоку
+    let sudokuArray1 = getSudokuArray("sudokuTable1");
+    let sudokuArray2 = getSudokuArray("sudokuTable2");
+    // перевіряємо чи дане судоку є валідне
+    let isValidSolution1 = validSolution(sudokuArray1);
+    let isValidSolution2 = validSolution(sudokuArray2);
+    document.write("<br>");
+    document.write('<div class="row">');
+    document.write('<div class="col-6">');
+    document.write(isValidSolution1);
+    document.write('</div>');
+    document.write('<div class="col-6">');
+    document.write(isValidSolution2);
+    document.write('</div>');
+    document.write('</div>');
+
+</script>

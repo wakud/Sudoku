@@ -1,0 +1,47 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+/* Стилі для таблиці */
+table.sudoku {
+    border-collapse: collapse;
+}
+
+table.sudoku tr:nth-child(3n+1) td {
+    border-top: 2px solid black;
+}
+
+table.sudoku tr td:nth-child(3n+1) {
+    border-left: 2px solid black;
+}
+
+table.sudoku tr:nth-child(3n+3) td {
+    border-bottom: 2px solid black;
+}
+
+table.sudoku tr td:nth-child(3n+3) {
+    border-right: 2px solid black;
+}
+
+    table td {
+        border: 1px solid black;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        font-size: 16px;
+    }
